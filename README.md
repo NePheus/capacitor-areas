@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/capacitor-areas.svg)](https://badge.fury.io/js/capacitor-areas)
 [![capacitor support](https://img.shields.io/badge/capacitor%20support-v3-brightgreen?logo=capacitor)](https://capacitorjs.com/)
 
 # capacitor-areas
