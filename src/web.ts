@@ -1,16 +1,16 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { SafeArea, SafeAreaPlugin } from './definitions';
+import type { Areas, AreasPlugin } from './definitions';
 
-export class SafeAreaWeb extends WebPlugin implements SafeAreaPlugin {
+export class AreasWeb extends WebPlugin implements AreasPlugin {
   constructor() {
     super({
-      name: 'SafeArea',
+      name: 'Areas',
       platforms: ['web'],
     });
   }
 
-  async getSafeArea(): Promise<SafeArea> {
+  async getSafeArea(): Promise<Areas> {
     throw new Error('Method not implemented.');
   }
 

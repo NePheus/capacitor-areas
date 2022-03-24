@@ -1,6 +1,6 @@
 [![capacitor support](https://img.shields.io/badge/capacitor%20support-v3-brightgreen?logo=capacitor)](https://capacitorjs.com/)
 
-# capacitor-safe-area
+# capacitor-areas
 
 This plugin provides functions to detect the devices safe area and the status bar and navigation bar height.
 
@@ -15,7 +15,7 @@ This plugin provides functions to detect the devices safe area and the status ba
 ## Install
 
 ```bash
-npm i capacitor-safe-area
+npm i capacitor-areas
 npx cap sync android
 ```
 

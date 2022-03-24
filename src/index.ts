@@ -1,10 +1,10 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { SafeAreaPlugin } from './definitions';
+import type { AreasPlugin } from './definitions';
 
-const SafeArea = registerPlugin<SafeAreaPlugin>('SafeArea', {
-  web: () => import('./web').then(m => new m.SafeAreaWeb()),
+const Areas = registerPlugin<AreasPlugin>('Areas', {
+  web: () => import('./web').then(m => new m.AreasWeb()),
 });
 
 export * from './definitions';
-export { SafeArea };
+export { Areas };

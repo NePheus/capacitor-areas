@@ -1,4 +1,4 @@
-package nepheus.capacitor.safearea;
+package nepheus.capacitor.areas;
 
 import android.content.res.Resources;
 import android.view.DisplayCutout;
@@ -9,8 +9,8 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin(name = "SafeArea")
-public class SafeAreaPlugin extends Plugin {
+@CapacitorPlugin(name = "Areas")
+public class AreasPlugin extends Plugin {
     @PluginMethod
     public void getSafeArea(PluginCall call) {
         WindowInsets windowInsets = this.getBridge().getActivity().getWindow().getDecorView().getRootWindowInsets();

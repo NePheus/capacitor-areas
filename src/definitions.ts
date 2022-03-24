@@ -1,15 +1,15 @@
-export interface SafeArea {
+export interface Areas {
   top: number;
   left: number;
   bottom: number;
   right: number;
 }
 
-export interface SafeAreaPlugin {
+export interface AreasPlugin {
   /**
    * Get the safe area of the device
    */
-  getSafeArea(): Promise<SafeArea | undefined>;
+  getSafeArea(): Promise<Areas | undefined>;
 
   /**
    * Get the status bar height of the device

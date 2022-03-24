@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-safe-area",
+  "name": "capacitor-areas",
   "version": "1.0.0",
   "description": "This plugin provides functions to detect the devices safe area and the status bar and navigation bar height.",
   "main": "dist/plugin.cjs.js",
@@ -15,10 +15,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NePheus/capacitor-safe-area.git"
+    "url": "git+https://github.com/NePheus/capacitor-areas.git"
   },
   "bugs": {
-    "url": "https://github.com/NePheus/capacitor-safe-area/issues"
+    "url": "https://github.com/NePheus/capacitor-areas/issues"
   },
   "keywords": [
     "capacitor",
@@ -34,7 +34,7 @@
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
-    "docgen": "docgen --api SafeAreaPlugin --output-readme README.md --output-json dist/docs.json",
+    "docgen": "docgen --api AreasPlugin --output-readme README.md --output-json dist/docs.json",
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
