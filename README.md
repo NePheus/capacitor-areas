@@ -75,7 +75,7 @@ Get the navigation bar height of the device. Returns 0 when the device has hardw
 ### Interfaces
 
 
-#### SafeArea
+#### Areas
 
 | Prop         | Type                |
 | ------------ | ------------------- |
