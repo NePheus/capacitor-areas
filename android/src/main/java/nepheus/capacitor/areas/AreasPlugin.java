@@ -71,21 +71,37 @@ public class AreasPlugin extends Plugin {
                     .getInsets(WindowInsets.Type.navigationBars())
                     .bottom);
         } else {
-            Display display = windowManager.getDefaultDisplay();
-            Point appUsableSize = new Point();
-            display.getSize(appUsableSize);
-            Point realScreenSize = new Point();
-            display.getRealSize(realScreenSize);
+            Resources resources = getActivity().getResources();
+            int id = resources.getIdentifier("config_showNavigationBar", "bool", "android");
+            if (id > 0 && resources.getBoolean(id)) {
+                Display display = windowManager.getDefaultDisplay();
+                Point appUsableSize = new Point();
+                display.getSize(appUsableSize);
+                Point realScreenSize = new Point();
+                display.getRealSize(realScreenSize);
 
-            if (appUsableSize.y < realScreenSize.y) {
-                // navigation bar at the bottom
-                height = this._convertToDeviceHeight(realScreenSize.y - appUsableSize.y);
-            } else if (appUsableSize.x < realScreenSize.x) {
-                // navigation bar on the side
-                height = this._convertToDeviceHeight(appUsableSize.y);
+                if (appUsableSize.y < realScreenSize.y) {
+                    // navigation bar at the bottom
+                    height = this._convertToDeviceHeight(realScreenSize.y - appUsableSize.y);
+                } else if (appUsableSize.x < realScreenSize.x) {
+                    // navigation bar on the side
+                    height = this._convertToDeviceHeight(appUsableSize.y);
+                }
+
+                height -= _getStatusBarHeight();
+
+                // Recalculate if height is not 0. getDimension() will return the correct final
+                // value. The code above is just to check if the navigation bar is hidden i.e. for
+                // Huawei devices because they return a value for the identifier 
+                // navigation_bar_height, even if the navigation bar is hidden by the system
+                if (height != 0) {
+                    height = this._convertToDeviceHeight(
+                            resources.getDimension(
+                                    resources.getIdentifier("navigation_bar_height", "dimen", 
+                                            "android")
+                            ));
+                }
             }
-
-            height -= _getStatusBarHeight();
         }
 
         JSObject ret = new JSObject();
